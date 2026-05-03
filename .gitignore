@@ -1,0 +1,9 @@
+.pytest_cache/
+.vscode/
+venv/
+.venv/
+.DS_Store
+__pycache__/
+tests_results/
+playwright-report/
+*.pyc
