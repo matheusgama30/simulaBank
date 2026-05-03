@@ -1,5 +1,6 @@
 import pytest
 from pages.login_page import LoginPage
+import os
 
 @pytest.fixture
 def page(page):
@@ -10,3 +11,9 @@ def page(page):
 @pytest.fixture
 def login_page(page):
     return LoginPage(page)
+
+@pytest.fixture(scope="session")
+def launch_browser_args():
+    return {
+        "headless": os.getenv("CI") == "true"
+    }
