@@ -27,7 +27,7 @@ jobs:
           playwright install --with-deps
 
       - name: Run tests
-        run: pytest -v --headed
+        run: pytest -v
 
       - name: Upload report (opcional)
         if: ${{ !cancelled() }}
