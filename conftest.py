@@ -1,6 +1,14 @@
 import pytest
 from pages.login_page import LoginPage
+from pages.home_page import HomePage
+from pages.pix_page import PixPage
+from pages.common_page import CommonPage
 import os
+
+
+@pytest.fixture
+def common_page(page):
+    return CommonPage(page)
 
 @pytest.fixture
 def page(page):
@@ -17,3 +25,11 @@ def launch_browser_args():
     return {
         "headless": os.getenv("CI") == "true"
     }
+
+@pytest.fixture
+def home_page(page):
+    return HomePage(page)
+
+@pytest.fixture
+def pix_page(page):
+    return PixPage(page)
