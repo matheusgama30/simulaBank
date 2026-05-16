@@ -16,6 +16,5 @@ class PixPage:
     def verificar_pix_sucesso(self):
         expect(self.page.get_by_text("Transação Realizada com Sucesso!")).to_be_visible()
 
-    def voltar_home(self):
-        self.voltar_para_home.click()
+
 
